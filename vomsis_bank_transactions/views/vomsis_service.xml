@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_vomsis_service_list" model="ir.ui.view">
+        <field name="name">vomsis.service.tree</field>
+        <field name="model">vomsis.service</field>
+        <field name="arch" type="xml">
+            <tree string="Vomsis Services">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_vomsis_service_form" model="ir.ui.view">
+        <field name="name">vomsis.service.form</field>
+        <field name="model">vomsis.service</field>
+        <field name="arch" type="xml">
+            <form string="Vomsis Service">
+                <header>
+                    <button name="authenticate"
+                            type="object"
+                            string="Authenticate"
+                            class="oe_highlight"/>
+                    <button name="fetch_banks"
+                            type="object"
+                            string="Get Banks"
+                            class="oe_highlight"/>
+                    <button name="fetch_accounts"
+                            type="object"
+                            string="Fetch Accounts"
+                            class="btn btn-secondary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="app_key"/>
+                        <field name="app_secret" password="True"/>
+                    </group>
+                    <notebook>
+                        <page string="Active Accounts">
+                            <field name="vomsis_accounts" nolabel="1">
+                                <tree editable="bottom" create="false">
+                                    <field name="bank_title"/>
+                                    <field name="fec_name"/>
+                                    <field name="iban"/>
+                                    <field name="journal_id"/>
+                                    <field name="account_number" column_invisible="True"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Vomsis Banks">
+                            <field name="vomsis_banks" nolabel="1" readonly="1">
+                                <tree>
+                                    <field name="vomsis_id"/>
+                                    <field name="bank_title"/>
+                                    <field name="bank_name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Other">
+                            <group string="Token">
+                                <field name="token" readonly="1"/>
+                            </group>
+                            <group string="Licence Info">
+                                <field name="company_name"/>
+                                <field name="company_title"/>
+                                <field name="contact_name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="code"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vomsis_service" model="ir.actions.act_window">
+        <field name="name">Vomsis Services</field>
+        <field name="res_model">vomsis.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Burada Vomsis API servis konfigürasyonlarınızı tanımlayabilirsiniz.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_vomsis_service"
+        name="Vomsis Services"
+        parent="account.account_banks_menu"
+        action="action_vomsis_service"
+        sequence="20"
+    />
+</odoo>

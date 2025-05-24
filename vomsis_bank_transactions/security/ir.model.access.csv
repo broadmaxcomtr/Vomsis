@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vomsis_service_user,vomsis.service user,model_vomsis_service,base.group_user,1,1,1,1
+access_vomsis_bank_user,access_vomsis_bank_user,model_vomsis_bank,base.group_user,1,1,1,1
+access_vomsis_account_user,access_vomsis_account_user,model_vomsis_account,base.group_user,1,1,1,1
+access_account_journal_account_transaction_wizard,Account Journal Transaction Wizard,model_account_journal_account_transaction_wizard,account.group_account_user,1,0,1,0

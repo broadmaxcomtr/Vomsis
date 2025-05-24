@@ -1,0 +1,410 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vomsis_bank_transactions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-24 22:51+0000\n"
+"PO-Revision-Date: 2025-05-24 22:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__app_key
+msgid "API Key"
+msgstr "API Anahtarı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__app_secret
+msgid "API Secret"
+msgstr "API Şifresi"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__token
+msgid "Access Token"
+msgstr "Erişim Tokenı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__account_number
+msgid "Account Number"
+msgstr "Hesap Numarası"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_account_journal_account_transaction_wizard
+msgid "Account Transactions Wizard"
+msgstr "Hesap İşlemleri Sihirbazı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__vomsis_accounts
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__active
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__vomsis_created_date
+msgid "Active"
+msgstr "Aktif"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Active Accounts"
+msgstr "Aktif Hesaplar"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Authenticate"
+msgstr "Kimlik Doğrulaması"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "Authentication başarısız.: %s"
+msgstr "Kimlik doğrulaması başarısız.: %s"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid ""
+"Authentication was successful but the token was not obtained. Please try "
+"again."
+msgstr "Kimlik doğrulaması başarılı oldu ancak erişim tokenı alınamadı. Lütfen tekrar deneyin."
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__bank_id
+msgid "Bank ID"
+msgstr "Banka ID"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__bank_name
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__bank_name
+msgid "Bank Name"
+msgstr "Banka Kısa Adı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Banka Hesap Ekstresi Kalemi"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__bank_title
+msgid "Bank Title"
+msgstr "Banka Adı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__bank_title
+msgid "Bank Tittle"
+msgstr "Banka Adı"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "Bank import failed: %s"
+msgstr "Banka içer alma işlemi başarısız: %s"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__vomsis_banks
+msgid "Banks"
+msgstr "Bankalar"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__begin_date
+msgid "Begin Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.actions.act_window,help:vomsis_bank_transactions.action_vomsis_service
+msgid "Burada Vomsis API servis konfigürasyonlarınızı tanımlayabilirsiniz."
+msgstr "Burada Vomsis API servis konfigürasyonlarınızı tanımlayabilirsiniz."
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_account_journal_get_account_transaction_wizard
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__code
+msgid "Code"
+msgstr "Kod"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__company_name
+msgid "Company Name"
+msgstr "Şirket İsmi"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__company_title
+msgid "Company Title"
+msgstr "Şirket İsmi"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__contact_name
+msgid "Contact Name"
+msgstr "Cari İsmi"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__create_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__create_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__create_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__create_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__create_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__create_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__create_date
+msgid "Created on"
+msgstr "Oluşturulan"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__display_name
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__display_name
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__display_name
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__email
+msgid "Email"
+msgstr "Email"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__end_date
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "Error during API request (%s %s): %s"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "Failed to import accounts: %s"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__fec_name
+msgid "Fec Name"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Fetch Accounts"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.actions.act_window,name:vomsis_bank_transactions.action_account_journal_get_account_transaction
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_account_journal_get_account_transaction_wizard
+msgid "Get Account Transactions"
+msgstr "Hesap Hareketlerini İçeri Al"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Get Banks"
+msgstr "Bankaları İçeri Al"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.account_journal_dashboard_kanban_inherit_transaction
+msgid "Get Manual Statement"
+msgstr "Manuel Ekstre Al"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__iban
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__id
+msgid "ID"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_account_journal_get_account_transaction_wizard
+msgid "Import Transactions"
+msgstr "Hareketleri İçeri Al"
+
+#. module: vomsis_bank_transactions
+#: model:ir.actions.server,name:vomsis_bank_transactions.ir_cron_import_vomsis_transactions_ir_actions_server
+msgid "Import Vomsis Transactions"
+msgstr "Vomsis Hareketlerini İçeri Al"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_account_journal
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__journal_id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__journal_id
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__write_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__write_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__write_uid
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__write_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__write_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__write_date
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Licence Info"
+msgstr "Lisans Bilgileri"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "License info fetch failed: %s"
+msgstr "Lisans bilgilerini alma işlemi başarısız: %s"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__name
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__name
+msgid "Name"
+msgstr "İsim"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__order
+msgid "Order"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Other"
+msgstr "Diğer"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_service__phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.constraint,message:vomsis_bank_transactions.constraint_account_bank_statement_line_unique_vomsis_id
+msgid "There is already a record with this Vomsis ID!"
+msgstr "Bu Vomsis ID ile zaten bir kayıt var!"
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Token"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_vomsis_account
+msgid "Vomsis API Accounts"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_vomsis_bank
+msgid "Vomsis API Banks"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model,name:vomsis_bank_transactions.model_vomsis_service
+msgid "Vomsis API Service Configuration"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid ""
+"Vomsis API URL is not configured. Please set the 'vomsis.api' system "
+"parameter."
+msgstr "Vomsis API URL'i ayarlanmamış. Sistem parametlerinden 'vomsis.api' parametresini ayarlayın"
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal__vomsis_account_id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal_account_transaction_wizard__vomsis_account_id
+msgid "Vomsis Account"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_journal__vomsis_account_ids
+msgid "Vomsis Accounts"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Vomsis Banks"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_account_bank_statement_line__vomsis_id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__vomsis_id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__vomsis_id
+msgid "Vomsis ID"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_account__service_id
+#: model:ir.model.fields,field_description:vomsis_bank_transactions.field_vomsis_bank__service_id
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_form
+msgid "Vomsis Service"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#: model:ir.actions.act_window,name:vomsis_bank_transactions.action_vomsis_service
+#: model:ir.ui.menu,name:vomsis_bank_transactions.menu_vomsis_service
+#: model_terms:ir.ui.view,arch_db:vomsis_bank_transactions.view_vomsis_service_list
+msgid "Vomsis Services"
+msgstr ""
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "Vomsis authentication failed: %s"
+msgstr "Vomsis kimlik doğrulama başarısız: %S"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/wizard/account_journal_account_transaction_wizard.py:0
+#, python-format
+msgid "Vomsis transactions fetch failed: %s"
+msgstr "Vomsis hareketleri alma işlemi başarısız: %S"
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "You must provide either begin_date/end_date or last_id."
+msgstr "Başlangıç Zamanı/Bitiş Zamanı sağlamalısınız."
+
+#. module: vomsis_bank_transactions
+#. odoo-python
+#: code:addons/vomsis_bank_transactions/models/vomsis_service.py:0
+#, python-format
+msgid "You must provide either begin_date/end_date."
+msgstr "Başlangıç Zamanı/Bitiş Zamanı sağlamalısınız."

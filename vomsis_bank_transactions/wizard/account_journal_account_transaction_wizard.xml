@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_account_journal_get_account_transaction_wizard" model="ir.ui.view">
+        <field name="name">account.journal.account.transaction.wizard.form</field>
+        <field name="model">account.journal.account.transaction.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Get Account Transactions">
+                <group>
+                    <field name="journal_id"/>
+                    <field name="begin_date"/>
+                    <field name="end_date"/>
+                </group>
+                <footer>
+                    <button string="Import Transactions" type="object" name="action_import_vomsis_transaction" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+  
+    <record id="action_account_journal_get_account_transaction" model="ir.actions.act_window">
+        <field name="name">Get Account Transactions</field>
+        <field name="res_model">account.journal.account.transaction.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
+ 
