@@ -15,7 +15,7 @@
             <field name="model">account.journal</field>
             <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//kanban//div[@name='bank_journal_cta']" position="inside">
+                <xpath expr="//kanban//div[@id=&quot;dashboard_bank_cash_left&quot;]" position="inside">
                 <field name="vomsis_account_id" invisible="1"/>
                 <t t-value="record.vomsis_account_id.raw_value" t-set="provider"/>
                 <a t-if="provider" name="action_get_account_transaction" type="object" class="btn btn-sm btn-info" role="button" groups="account.group_account_invoice">

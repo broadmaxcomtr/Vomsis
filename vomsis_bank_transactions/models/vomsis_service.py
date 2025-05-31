@@ -362,7 +362,6 @@ class VomsisService(models.Model):
         endpoint=f"transactions/{move_id}/delete"
         return self.delete(endpoint)
 
-
     @api.model
     def _cron_import_transaction_lines(self):
 
@@ -374,6 +373,6 @@ class VomsisService(models.Model):
             try:
                 service.import_transaction_lines()
             except Exception as e:
-                raise UserError(_('App key and App secret must be set.'),e)
+                raise UserError(_('App key and App secret must be set. %s') % e)
 
         return True
