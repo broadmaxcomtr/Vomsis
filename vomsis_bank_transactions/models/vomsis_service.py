@@ -374,6 +374,6 @@ class VomsisService(models.Model):
             try:
                 service.import_transaction_lines()
             except Exception as e:
-                raise UserError(_('App key and App secret must be set.'),e)
+                raise UserError(_('App key and App secret must be set. %s')% e)
 
         return True
