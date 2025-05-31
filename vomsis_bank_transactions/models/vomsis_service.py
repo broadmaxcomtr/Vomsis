@@ -29,6 +29,8 @@ class VomsisService(models.Model):
         inverse_name='service_id',
         string='Accounts',
     )
+    last_date=fields.Date(string="Last Date")
+    last_id=fields.Char(string="Last Id")
 
     @api.model
     def _get_root_url(self):
@@ -224,36 +226,60 @@ class VomsisService(models.Model):
             raise UserError(_('You must provide either begin_date/end_date or last_id.'))
         return self.get(endpoint, params=params)
 
-    def get_bank_transactions(self, begin_date=None, end_date=None, last_id=None, date_type=None,
-                                 types=None,bankName=None):
+    def get_bank_transactions(self):
         """
         Fetch transactions.
         GET /api/v2/transactions
         Required: beginDate and endDate or lastId
-        Optional:
-            lastId: only transactions after this ID
-            dateType: 'system_date' or 'accounting_date'
-            types: comma-separated list of transaction type codes, e.g. 'TRFGEL,DBSTAH'
-            bankName: akbank, ziraat
         Date format: 'dd-MM-YYYY HH:mm:ss'
         """
         self.ensure_one()
-        endpoint = f"transactions"
+        endpoint = "transactions"
         params = {}
-        if begin_date and end_date:
-            params['beginDate'] = begin_date
-            params['endDate'] = end_date
-        if last_id is not None:
-            params['lastId'] = last_id
-        if date_type:
-            params['dateType'] = date_type
-        if types:
-            params['types'] = types
-        if bankName:
-            params['bankName'] = bankName
-        if not (params.get('beginDate') and params.get('endDate')) and 'lastId' not in params:
-            raise UserError(_('You must provide either begin_date/end_date or last_id.'))
-        return self.get(endpoint, params=params)
+
+        if self.last_id:
+            params['lastId'] = self.last_id
+        else:
+            if not self.last_date:
+                raise UserError(_('No last_date set and no last_id provided.'))
+            params['beginDate'] = self.last_date.strftime('%d-%m-%Y %H:%M:%S')
+            params['endDate'] = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+
+        result = self.get(endpoint, params=params)
+
+        tx_list = result.get('transactions') or []
+        if tx_list:
+            last_tx = tx_list[-1]
+            self.last_id = last_tx.get('id')
+            self.last_date = datetime.now()
+
+        return result
+
+    def import_transaction_lines(self):
+
+        self.ensure_one()
+
+        data = self.get_bank_transactions()
+        tx_list = data.get('transactions') or []
+
+        txs_by_journal = {}
+        for tx in tx_list:
+            v_acc_id = tx.get('account', {}).get('id')
+            acct_cfg = self.vomsis_accounts.filtered(
+                lambda a: a.account_number == f"{v_acc_id}"
+            )
+            if not acct_cfg:
+                continue
+            journal = acct_cfg.journal_id
+            if not journal:
+                continue
+
+            txs_by_journal.setdefault(journal, []).append(tx)
+
+        for journal, txs in txs_by_journal.items():
+            journal._create_bank_statement_lines(txs)
+
+        return tx_list
 
     def get_transaction_types(self):
         return self.get('transaction_types')
@@ -335,3 +361,19 @@ class VomsisService(models.Model):
     def delete_transactions_move(self,move_id):
         endpoint=f"transactions/{move_id}/delete"
         return self.delete(endpoint)
+
+
+    @api.model
+    def _cron_import_transaction_lines(self):
+
+        valid_services = self.search([
+            ('app_key', '!=', False),
+            ('app_secret', '!=', False),
+        ])
+        for service in valid_services:
+            try:
+                service.import_transaction_lines()
+            except Exception as e:
+                raise UserError(_('App key and App secret must be set.'),e)
+
+        return True

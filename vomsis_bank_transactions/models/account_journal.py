@@ -1,7 +1,9 @@
 from odoo import models, fields, api, _
 from datetime import datetime, timedelta
 from odoo.exceptions import UserError
-from datetime import datetime
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class AccountJournal(models.Model):
     _inherit = 'account.journal'
@@ -72,32 +74,34 @@ class AccountJournal(models.Model):
                 'amount': amount,
             })
 
-    def _cron_import_vomsis_transactions(self):
-        cron = self.env.ref('vomsis_api.ir_cron_import_vomsis_transactions')
-        if cron.lastcall:
-            begin_dt = fields.Datetime.from_string(cron.lastcall)
-        else:
-            begin_dt = datetime.now() - timedelta(minutes=15)
-        end_dt = fields.Datetime.now()
-        begin_str = begin_dt.strftime('%d-%m-%Y %H:%M:%S')
-        end_str = end_dt.strftime('%d-%m-%Y %H:%M:%S')
 
-        journals = self.search([
-            ('type', '=', 'bank'),
-            ('vomsis_account_id', '!=', False),
-        ])
-        for journal in journals:
-            service = journal.vomsis_account_id.service_id
-            try:
-                res = service.get_account_transactions(
-                    account_id=journal.vomsis_account_id.vomsis_id,
-                    begin_date=begin_str,
-                    end_date=end_str,
-                )
-                txs = res.get('transactions', [])
-            except Exception as e:
-                continue
-            journal._create_bank_statement_lines(txs)
 
-        cron.write({'lastcall': fields.Datetime.to_string(end_dt)})
-        return True
+    # def _cron_import_vomsis_transactions(self):
+    #     cron = self.env.ref('vomsis_api.ir_cron_import_vomsis_transactions')
+    #     if cron.lastcall:
+    #         begin_dt = fields.Datetime.from_string(cron.lastcall)
+    #     else:
+    #         begin_dt = datetime.now() - timedelta(minutes=15)
+    #     end_dt = fields.Datetime.now()
+    #     begin_str = begin_dt.strftime('%d-%m-%Y %H:%M:%S')
+    #     end_str = end_dt.strftime('%d-%m-%Y %H:%M:%S')
+    #
+    #     journals = self.search([
+    #         ('type', '=', 'bank'),
+    #         ('vomsis_account_id', '!=', False),
+    #     ])
+    #     for journal in journals:
+    #         service = journal.vomsis_account_id.service_id
+    #         try:
+    #             res = service.get_account_transactions(
+    #                 account_id=journal.vomsis_account_id.vomsis_id,
+    #                 begin_date=begin_str,
+    #                 end_date=end_str,
+    #             )
+    #             txs = res.get('transactions', [])
+    #         except Exception as e:
+    #             continue
+    #         journal._create_bank_statement_lines(txs)
+    #
+    #     cron.write({'lastcall': fields.Datetime.to_string(end_dt)})
+    #     return True

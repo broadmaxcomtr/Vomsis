@@ -9,7 +9,7 @@
     'website':'broadmax.com.tr',
     'license': 'LGPL-3',
     'category': 'Bank',
-    'depends': ['account'],
+    'depends': ['account','account_accountant'],
     'data': [
         'data/ir_config_parameter_data.xml',
         'data/ir_cron.xml',

@@ -28,6 +28,10 @@
                             type="object"
                             string="Fetch Accounts"
                             class="btn btn-secondary"/>
+<!--                    <button name="import_transaction_lines"-->
+<!--                            type="object"-->
+<!--                            string="Get Transaction Lines"-->
+<!--                            class="btn btn-secondary"/>-->
                 </header>
                 <sheet>
                     <group>
@@ -61,6 +65,8 @@
                         <page string="Other">
                             <group string="Token">
                                 <field name="token" readonly="1"/>
+                                <field name="last_date" readonly="1"/>
+                                <field name="last_id" readonly="1"/>
                             </group>
                             <group string="Licence Info">
                                 <field name="company_name"/>

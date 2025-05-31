@@ -13,8 +13,13 @@ class AccountJournalAccountTransactionWizard(models.TransientModel):
 
     def action_import_vomsis_transaction(self):
         self.ensure_one()
+
+        if (self.end_date - self.begin_date).days > 7:
+            raise UserError(_('The date range cannot exceed 7 days. Please select a range of 7 days or fewer.'))
+
         start_dt = datetime.combine(self.begin_date, time.min)
         end_dt = datetime.combine(self.end_date, time(hour=23, minute=59, second=0))
+
         service = self.vomsis_account_id.service_id
         begin_str = start_dt.strftime('%d-%m-%Y %H:%M:%S')
         end_str = end_dt.strftime('%d-%m-%Y %H:%M:%S')
@@ -27,5 +32,7 @@ class AccountJournalAccountTransactionWizard(models.TransientModel):
             transactions = response.get('transactions', [])
         except Exception as e:
             raise UserError(_('Vomsis transactions fetch failed: %s') % e)
+
         self.journal_id._create_bank_statement_lines(transactions)
+
         return {'type': 'ir.actions.act_window_close'}
