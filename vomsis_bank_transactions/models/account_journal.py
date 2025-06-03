@@ -73,6 +73,7 @@ class AccountJournal(models.Model):
                 'payment_ref': tx.get('description'),
                 'amount': amount,
             })
+            _logger.info(tx)
 
 
 
