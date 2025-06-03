@@ -271,9 +271,11 @@ class VomsisService(models.Model):
             acct_cfg = self.vomsis_accounts.filtered(
                 lambda a: a.account_number == f"{v_acc_id}"
             )
+            _logger.info('acct_cfg %s', acct_cfg)
             if not acct_cfg:
                 continue
             journal = acct_cfg.journal_id
+            _logger.info('journal %s', journal)
             if not journal:
                 continue
 
