@@ -268,8 +268,9 @@ class VomsisService(models.Model):
         txs_by_journal = {}
         for tx in tx_list:
             v_acc_id = tx.get('account', {}).get('id')
+            _logger.info('v_acc_id %s', v_acc_id)
             acct_cfg = self.vomsis_accounts.filtered(
-                lambda a: a.account_number == f"{v_acc_id}"
+                lambda a: a.journal_id.vomsis_account_id == f"{v_acc_id}"
             )
             _logger.info('acct_cfg %s', acct_cfg)
             if not acct_cfg:
