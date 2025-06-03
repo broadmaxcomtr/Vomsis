@@ -2,6 +2,8 @@ from datetime import datetime
 import requests
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
+import logging 
+logger = logging.getLogger(name_)
 
 class VomsisService(models.Model):
     _name = 'vomsis.service'
@@ -278,7 +280,8 @@ class VomsisService(models.Model):
 
         for journal, txs in txs_by_journal.items():
             journal._create_bank_statement_lines(txs)
-
+            
+        _logger.info(tx_list)
         return tx_list
 
     def get_transaction_types(self):
