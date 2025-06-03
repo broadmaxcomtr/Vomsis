@@ -280,8 +280,8 @@ class VomsisService(models.Model):
             txs_by_journal.setdefault(journal, []).append(tx)
 
         for journal, txs in txs_by_journal.items():
-            journal._create_bank_statement_lines(txs)
-            
+            result = journal._create_bank_statement_lines(txs)
+            _logger.info('Result: %s', result)
         _logger.info(tx_list)
         return tx_list
 
