@@ -3,7 +3,7 @@ import requests
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 import logging 
-logger = logging.getLogger(name_)
+logger = logging.getLogger(__name__)
 
 class VomsisService(models.Model):
     _name = 'vomsis.service'
