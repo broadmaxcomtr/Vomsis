@@ -282,7 +282,7 @@ class VomsisService(models.Model):
         for journal, txs in txs_by_journal.items():
             result = journal._create_bank_statement_lines(txs)
             _logger.info('Result: %s', result)
-        _logger.info('tx_list: %s'tx_list)
+        _logger.info('tx_list: %s', tx_list)
         return tx_list
 
     def get_transaction_types(self):
