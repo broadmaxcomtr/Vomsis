@@ -57,7 +57,7 @@ class AccountJournal(models.Model):
         existing = set(self.env['account.bank.statement.line']
                     .search([('journal_id', '=', self.id), ('vomsis_id', 'in', ids)])
                     .mapped('vomsis_id'))
-        logger.info(ids)
+        _logger.info(ids)
         for tx in transactions:
             tx_id = str(tx.get('id'))
             if tx_id in existing:
