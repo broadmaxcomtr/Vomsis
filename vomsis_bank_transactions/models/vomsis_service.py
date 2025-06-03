@@ -277,12 +277,12 @@ class VomsisService(models.Model):
             if not journal:
                 continue
 
-            txs_by_journal.setdefault(journal, []).append(tx)
-
+            by_journal = txs_by_journal.setdefault(journal, []).append(tx)
+            _logger.info('Journal %s',by_journal)
         for journal, txs in txs_by_journal.items():
             result = journal._create_bank_statement_lines(txs)
             _logger.info('Result: %s', result)
-        _logger.info(tx_list)
+        _logger.info('tx_list: %s'tx_list)
         return tx_list
 
     def get_transaction_types(self):
